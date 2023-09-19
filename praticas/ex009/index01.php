@@ -9,8 +9,14 @@
     <?php //ESTRUTURA DE REPETIÇÃO DO WHILE - SCRIPT PARA CALCULAR O FATORIAL DE UM NÚMERO INTEIRO
         $v = isset($_GET["num"]) ? $_GET ["num"] : 0;
         $c = 1;
-            
+
+        do {
+            echo "$v ";
+            $v--;
+        } while ($v >= 1);
+                  
     ?>
+    <br><a href="javascript:history.go(-1)"><input type="submit" value="Voltar"></a>
 
 
     <!-- ESTRUTURA DE REPETIÇÃO DO WHILE - CONTAGEM REGRESSIVA DE 20 A 1
@@ -37,7 +43,7 @@
         do { //faça o código abaixo
             echo "$c "; //aparece c na tela (contagem)
             $c++; //c+1 ate chegar em 10
-        } while ($c <= 100);// enquanto c for menor ou igual a 10, faça a contagem crescente   
+        } while ($c <= 10);// enquanto c for menor ou igual a 10, faça a contagem crescente   
     ?> -->
     
 </body>
