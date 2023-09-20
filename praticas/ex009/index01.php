@@ -7,14 +7,17 @@
 </head>
 <body>
     <?php //ESTRUTURA DE REPETIÇÃO DO WHILE - SCRIPT PARA CALCULAR O FATORIAL DE UM NÚMERO INTEIRO
-        $v = isset($_GET["num"]) ? $_GET ["num"] : 0;
-        $c = 1;
+        $v = isset($_GET["num"]) ? $_GET ["num"] : 1; //pega valor que usuario colocar na caixa
+        $c = 1; //inicializa a contagem com 1
 
-        do {
-            echo "$v ";
-            $v--;
+        echo "O fatorial de $v "; //mostra o valor original de v
+
+        do { //faça...
+            $c *= $v; // 1 x (valor que o usuario colocar)...
+            $v--; // o novo valor depois da multiplicação (ele mesmo) -1 --- repete a linha 16 so que com o novo valor de v depois da subtração
         } while ($v >= 1);
-                  
+
+        echo "é $c"         
     ?>
     <br><a href="javascript:history.go(-1)"><input type="submit" value="Voltar"></a>
 
