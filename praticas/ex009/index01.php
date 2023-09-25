@@ -6,7 +6,25 @@
     <title>Estrutura de repetição Do While</title>
 </head>
 <body>
-    <?php //ESTRUTURA DE REPETIÇÃO DO WHILE - SCRIPT PARA CALCULAR O FATORIAL DE UM NÚMERO INTEIRO
+    <?php 
+        $userNumber = isset($_GET["tab"]) ? $_GET["tab"] : 0;
+        $tabuada = 1;
+        $result = '';
+
+        echo "<h1>Mostrando a tabuada de $userNumber</h1>";
+
+        do {            
+            $result = $userNumber." X ".$tabuada." = ".($userNumber * $tabuada)."<br>"; //foi dado valor a variavel result que faz a multiplicação
+            $tabuada++; //tabuada sempre será acrescentada +1 quando ate chegar em 10
+            echo "<br>$result"; //mosta result formatado na tela
+        } while ($tabuada <= 10);   
+    ?>
+    
+    <br><a href="javascript:history.go(-1)"><input type="submit" value="Voltar"></a>
+    
+
+
+    <!-- <?php //ESTRUTURA DE REPETIÇÃO DO WHILE - SCRIPT PARA CALCULAR O FATORIAL DE UM NÚMERO INTEIRO
         $v = isset($_GET["num"]) ? $_GET ["num"] : 1; //pega valor que usuario colocar na caixa
         $c = 1; //inicializa a contagem com 1
 
@@ -18,9 +36,7 @@
         } while ($v >= 1);
 
         echo "é $c"         
-    ?>
-    <br><a href="javascript:history.go(-1)"><input type="submit" value="Voltar"></a>
-
+    ?> -->
 
     <!-- ESTRUTURA DE REPETIÇÃO DO WHILE - CONTAGEM REGRESSIVA DE 20 A 1
     <?php 
