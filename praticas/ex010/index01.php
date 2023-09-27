@@ -4,23 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estrutura de repetição For</title>
+    <style>
+        body {
+            font: normal 20px arial;
+        }
+    </style>
 </head>
 <body>
-    <?php 
-        $n = isset($_GET["v"]) ? $_GET["v"] : 0;
-        // $t = 1;
+    <?php
+        //Número primo é divisivel APENAS por 1 e ele mesmo
+        //Apenas DOIS divisores
 
-        print "<h1>Analisamos o número $n...</h1>";
+        $numero = isset($_GET["v"]) ? $_GET["v"] : 0;//var que guarda o valor que o usuario colocar
+        $divisores = 0;//variavel de inicialização númerica    
 
-        for ($n=1; $n <= 1 ; $n++) { 
-            print "<h3>Valores múltiplos: </h3>"; //uma var ($valoresMultiplos)
-            print "<h3>Total de múltiplos: </h3>"; //outra var ($totalMultiplos)
-            print "<h3>Resultado: $n <strong>É PRIMO!</strong></h3>"; //outra var ($result)
-            print "<h3>Resultado: $n <strong>NÃO É PRIMO!</strong></h3>"; //outra var ($result)
+        print "<h1>Analisamos o número $numero...</h1>";//frase que aparece na tela 
+
+        /*ESTRUTURA DE REPETIÇÃO FOR COM UM IF*/
+        for ($r = 1; $r <= $numero; $r++) { //Linha serve para inicializar o processo da divisão do numero do usuario por outros numeros seguintes a ele
+            if ($numero % $r == 0) {//linha testa se o numero do usuario é divisivel pelo numero seguinte e se o resto da operação é zero 
+                $divisores++; //adiciona +1 na minha variavel caso o resto seja zero                
+            }
         }
 
-        //tem um if nessa repetição for
-    
+        /*ESTRUTURA CONDICIONAL IF*/
+        if ($divisores == 2) { //se o número de divisores for 2 é primo
+            print "<h3>Valores múltiplos:  </h3>";
+            print "<h3>Total de múltiplos: $divisores </h3>";
+            print "<h3>Resultado: $numero <strong>É PRIMO!</strong></h3>"; 
+        }else{
+            print "<h3>Valores múltiplos:  </h3>";
+            print "<h3>Total de múltiplos: $divisores </h3>";
+            print "<h3>Resultado: $numero <strong>NÃO É PRIMO!</strong></h3>"; 
+        }
+
     ?>
     
     <br><a href="javascript:history.go(-1)"><input type="submit" value="Voltar"></a> 
