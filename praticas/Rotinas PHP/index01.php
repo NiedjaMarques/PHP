@@ -8,7 +8,7 @@
 <body>
     <?php
         function soma(){
-            $p = func_get_arg(); //Pega todos os argumentos e coloca dentro do vetor 'p'
+            $p = func_get_args(); //Pega todos os argumentos e coloca dentro do vetor 'p'
             $tot = func_num_args(); //Retorna o número de elementos que foram passados
             $s = 0;
             
@@ -18,7 +18,7 @@
             return $s;
         }
 
-        $res = soma(3, 5, 2); //Chamada da minha função no HTML, sem ela, a mensagem não aparece
+        $res = soma(3, 5, 2, 3, 5); //Chamada da minha função no HTML, sem ela, a mensagem não aparece
         echo "A soma é $res. "; //Mostra mensagem na tela
     ?>
 
