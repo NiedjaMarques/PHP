@@ -17,23 +17,27 @@
 
         $numero = isset($_GET["v"]) ? $_GET["v"] : 0;//var que guarda o valor que o usuario colocar
         $divisores = 0;//variavel de inicialização númerica    
+        // $n = ["Niedja" => 32, 0 => 1, 1 => 2];
+        // var_dump($n);
+        // die();
 
-        print "<h1>Analisamos o número $numero...</h1>";//frase que aparece na tela 
+        print "<h1>Analisamos o número $numero</h1>";//frase que aparece na tela 
 
         /*ESTRUTURA DE REPETIÇÃO FOR COM UM IF*/
         for ($r = 1; $r <= $numero; $r++) { //Linha serve para inicializar o processo da divisão do numero do usuario por outros numeros seguintes a ele
             if ($numero % $r == 0) {//linha testa se o numero do usuario é divisivel pelo numero seguinte e se o resto da operação é zero 
-                $divisores++; //adiciona +1 na minha variavel caso o resto seja zero                
+                $divisores++; //adiciona +1 na minha variavel caso o resto seja zero  
+                $multiplos[] = $r; // Adiciona o valor ao array de múltiplos              
             }
         }
 
         /*ESTRUTURA CONDICIONAL IF*/
         if ($divisores == 2) { //se o número de divisores for 2 é primo
-            print "<h3>Valores múltiplos:  </h3>";
+            print "<h3>Valores múltiplos: " . implode(", ", $multiplos) . "</h3>";
             print "<h3>Total de múltiplos: $divisores </h3>";
             print "<h3>Resultado: $numero <strong>É PRIMO!</strong></h3>"; 
         }else{
-            print "<h3>Valores múltiplos:  </h3>";
+            print "<h3>Valores múltiplos: " . implode(", ", $multiplos) . "</h3>"; // Exibe os múltiplos separados por vírgula
             print "<h3>Total de múltiplos: $divisores </h3>";
             print "<h3>Resultado: $numero <strong>NÃO É PRIMO!</strong></h3>"; 
         }
