@@ -43,11 +43,11 @@
         $num1 = isset($_GET["n1"]) ? $_GET["n1"] : 0;
         $num2 = isset($_GET["n2"]) ? $_GET["n2"] : 0;
 
-        /*FUNÇÃO PARA SOMA*/
-        //function soma($num1, $num2){
-            //$s = $num1 + $num2; //$s é a soma de num1 e num2
-            //echo "<p>A soma é $s </p>"; //Mensagem que aparece na tela
-        //};
+        /*FUNÇÃO PARA SOMA
+        function soma($num1, $num2){
+            $s = $num1 + $num2; //$s é a soma de num1 e num2
+            echo "<p>A soma é $s </p>"; //Mensagem que aparece na tela
+        };*/
 
         soma($num1, $num2); //Chamada da minha função no HTML, sem ela, a mensagem não aparece
     ?> -->
