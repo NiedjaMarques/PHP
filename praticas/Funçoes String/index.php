@@ -7,7 +7,7 @@
 </head>
 <body> 
     <!-- 
-        //FUNÇÃO ORD
+        //FUNÇÃO ORD - Retorna o codigo ASCII de um caractere passado como parâmetro.
         <?php
             $letra = "C";
             $cod = ord($letra);
@@ -18,7 +18,7 @@
     -->
 
     <!-- 
-        //FUNÇÃO CHR - NÃO ENTENDI PESQUISAR DEPOIS
+        //FUNÇÃO CHR - Retorna um caractere de acordo com o seu codigo ASCII passado como parâmetro.
         <?php 
             $letra = chr(67);
             echo "A letra de codigo 67 é $letra";
@@ -28,7 +28,7 @@
     -->
 
     <!-- 
-        //FUNÇÃO IMPLODE - NÃO ENTENDI PESQUISAR DEPOIS
+        //FUNÇÃO IMPLODE - Transforma um vetor inteiro em uma string
         <?php                  
             $vetor[0] = "Curso";        
             $vetor[1] = "em";  
@@ -41,7 +41,7 @@
     -->
 
     <!-- 
-        //FUNÇÃO STR_SPLIT - NÃO ENTENDI PESQUISAR DEPOIS
+        //FUNÇÃO STR_SPLIT - Coloca cada letra de uma string em uma posição de um vetor
         <?php                  
             $nome = "Maria";        
             $vetor = str_split($nome); 
@@ -52,7 +52,7 @@
     -->
 
     <!-- 
-        //FUNÇÃO EXPLODE - NÃO ENTENDI PESQUISAR DEPOIS     
+        //FUNÇÃO EXPLODE -quebra uma string e coloca os itens em um vetor    
         <?php            
             $site = "Curso em video";        
             $vetor = explode(" ", $site); 
@@ -66,7 +66,10 @@
         //FUNÇÃO STR_WORD_COUNT - Entrega a quantidade de palavras que existem dentro de uma string.
         <?php     
             $frase = "Eu vou estudar PHP";        
-            $cont = str_word_count($frase, 0); //0 conta as palavras - 1 cria um vetor com as palavras - 2 gera um vetor tambem (vetor mantendo o posicionamento de cada palavra dentro da string)
+            $cont = str_word_count($frase, 0); 
+            //0 conta as palavras 
+            //1 cria um vetor com as palavras
+            //2 gera um vetor tambem (vetor mantendo o posicionamento de cada palavra dentro da string)
             print $cont; 
 
             //resultado: 4 palavras
@@ -74,7 +77,7 @@
     -->
 
     <!-- 
-        FUNÇÃO RTRIM - (right-trim) - NÃO ENTENDI PESQUISAR DEPOIS
+        FUNÇÃO RTRIM - elimina espaços no final de uma string - NÃO ENTENDI PESQUISAR DEPOIS
         <?php        
             $nome = "xxxJoséxdaxSilvaxxx";
             echo(strlen($nome)); 
@@ -85,7 +88,7 @@
     -->
 
     <!-- 
-        FUNÇÃO LTRIM - lefttrim - NÃO ENTENDI PESQUISAR DEPOIS
+        FUNÇÃO LTRIM - elimina espaços no inicio de uma string - NÃO ENTENDI PESQUISAR DEPOIS
         <?php        
             $nome = "xxxJoséxdaxSilvaxxx";
             echo(strlen($nome)); 
@@ -95,8 +98,9 @@
         ?> 
     -->
      
+     
     <!-- 
-        FUNÇÃO TRIM - Útil para dados vindos de formularios - "recortar pedaços" - NÃO ENTENDI PESQUISAR DEPOIS
+        FUNÇÃO TRIM - Útil para dados vindos de formularios - elimina espaços em branco antes e depois de uma string - NÃO ENTENDI PESQUISAR DEPOIS 
         <?php        
             $nome = "xxxJoséxdaxSilvaxxx";
             echo(strlen($nome)); //resultado : 20
@@ -122,6 +126,11 @@
         <?php             
             $t = "Este é um exemplo de string gigante criado pelo PHP e vai mostrar o funcionamento da funçãowordwrap";
             $res = wordwrap($t, 10, "<br>\n", false);
+            //valor 10 significa uma quebra com 10 caracteres incluindo os espaços em branco
+            //<br> significa uma quebra de linha visual
+            //(\n) significa uma quebra de linha codigo fonte
+            //false significa gera a quebra por palavra se ela tiver menos de 10 letras. ex: funcionamento (palavra não será quebrada)
+            //true significa o contrario de false ex: funcionamento (palavra seria quebrada, ficaria: funcioname-nto)
             echo ($res);   
             
             /*
@@ -138,8 +147,7 @@
             da
             funçãowordwrap
             */
-        ?>
-         
+        ?>         
     -->
 
     <!-- 
@@ -161,7 +169,7 @@
             $produto = "leite";
             $preco = 4.5;
             // echo "O $produto está custando R$" . number_format($preco, 2);
-            printf("O %s está custando R$ %.2f", $produto, $preco);  //%s pra mostrar uma string e %.2f é a formatação (foot) com duas casas
+            printf("O %s está custando R$ %.2f", $produto, $preco);  //%s pra mostrar uma string e %.2f é a formatação com duas casas
 
             // resultado : O leite está custando R$ 4.50
         ?> 
