@@ -7,7 +7,7 @@
 </head>
 <body> 
     <!-- 
-        //FUNÇÃO ORD - Retorna o codigo ASCII de um caractere passado como parâmetro.
+        //FUNÇÃO ORD - Retorna o codigo ASCII de um caractere 
         <?php
             $letra = "C";
             $cod = ord($letra);
